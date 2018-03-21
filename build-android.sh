@@ -288,7 +288,7 @@ case "$NDK_RN" in
 		;;
 	16.*)
 		TOOLCHAIN=${TOOLCHAIN:-llvm}
-		CXXPATH=$AndroidNDKRoot/toolchains/${TOOLCHAIN}/prebuilt/${PlatformOS}-x86_64/bin/clang++
+		CXXPATH=/home/unity/Android/my_toolchain/bin/arm-linux-androideabi-clang++
 		TOOLSET=clang
 		;;
 	*)
@@ -508,7 +508,7 @@ echo "Building boost for android for $ARCH"
          $cxxflags                    \
          link=static                  \
          threading=multi              \
-         --layout=versioned           \
+         --layout=system              \
          $WITHOUT_LIBRARIES           \
          -sICONV_PATH=`pwd`/../libiconv-libicu-android/$ARCH \
          -sICU_PATH=`pwd`/../libiconv-libicu-android/$ARCH \
